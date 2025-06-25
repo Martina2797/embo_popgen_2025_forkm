@@ -79,7 +79,25 @@ Plot the posterior probability, assuming a uniform prior (alpha = beta = 1). The
 What happens to the distribution if we have only 10 samples (with the sample allele frequency of 0.20)?
 
 ```{r}
-#...
+#63 AA, 34 AG, 3 GG
+#k event of succesess
+#$p$ is the proportion of $G$ alleles we have (i.e. the probability of a success), and $n$ is the number of alleles we sample.
+n=20
+k=20*0.2
+
+p=seq(0,1,0.01)
+
+
+
+a=1
+b=1
+#we can add Beta=(k+a),(n-k+b)
+
+plot(p, dbeta(p,(k+a),(n-k+b)), type = "l", col="blue")
+
+MAP <- (a-1)/(a+b-2)
+print(MAP)
+
 ```
 
 We can think of a more informative prior.

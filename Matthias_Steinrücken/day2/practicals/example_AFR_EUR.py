@@ -4,6 +4,7 @@ import msprime
 import demesdraw
 from matplotlib import pyplot as plt
 
+
 # add demography
 demography = msprime.Demography()
 demography.add_population(name="AFR", initial_size=30_000)
